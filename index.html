@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="amit bajaj, Amit Bajaj, AmitBajaj, LTE Secrets"/>
+    <meta name="description" content="A blog about LTE Secrets wireless and telecommunication technology."/>
+    <meta name="author" content="Amit Bajaj"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LTE Secrets</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .class1 {
+          width: 35px;
+          height: 5px;
+          background-color:RGB(200, 152, 135);
+          margin: 6px 0;
+         background-color: white;
+        }
+        </style>
+</head>
+<body style="background-color: RGB(200, 152, 135)">
+   <nav>
+    <fieldset style="background-color:rgb(249, 90, 17); display: block;width: 100%; border-style: hidden; margin-left: -10px; margin-top: -10px;">
+
+    <table style="display: inline-block;">
+    <tr style="display: inline-block;">
+        <td style="display: inline-block;"><img src="emm2.gif" alt="LTE SECRETS" style="border:1px  black; width: 340px; height: 140px; display: inline-block;; border-radius: 5px; margin-top: 16px; margin-left: 14px;"></td>
+        <td style= "padding-left: 120px; display: inline-block;"><p style="font-family:'Times New Roman', Times, serif; font-size: 30px;"> A blog about LTE Secrets wireless and telecommunication technology.</p></td>
+    </tr>
+    </table>
+    </fieldset>
+</nav>
+<br>
+<fieldset style="padding-top:0px; width: 100%; margin-left: -10px;">
+<details>
+<summary style="color: white;">
+    <div class="class1"></div>
+    <div class="class1"></div>
+</summary>
+    <h2><a href="#cups1" style="color: white;">CUPS Architecture - End-To-End Call flow diagram</a></h2>
+    <h2><a href="#cups2" style="color: white;">CUPS-Userplane Selection</a></h2>
+    <h2><a href="#cups3" style="color: white;">Network Initiated Dedicated bearer</a></h2>
+    <h2><a href="#cups4" style="color: white;">APN-OI Replacement</a></h2>
+    <h2><a href="#cups5" style="color: white;">LTE End To End Call flow</a></h2>
+    <h2><a href="#cups6" style="color: white;">ARP (Allocation and Retention Priority) in LTE</a></h2>
+    <h2><a href="#cups7" style="color: white;">MME in Pool</a></h2>
+    <h2><a href=""></a></h2>
+    <h2><a href=""></a></h2>
+    <h2><a href=""></a></h2>
+    <h2><a href=""></a></h2>
+</details>
+</fieldset>
+<br><br>
+<div style="display: inline-block;">
+<div style="display: inline-block; border: 1px solid white; background-color: white"><form style="display: inline-block;">
+    <fieldset id="cups1" style="border: 1px solid black; border-radius: 5px; display: inline-block; margin: 15px; color: black; background-color: white"><legend style="border: 1px solid black;">Tuesday, December 7, 2021</legend>
+        <h2>CUPS Architecture - End-To-End Call flow diagram</h2>
+        <img src="CUPS_Callflow.png" alt="image">
+        <h4>Posted by Amit Bajaj at 11:37 PM</h4>
+        <h4>Labels: CUPS Architecture, CUPS call flow, CUPS call flow diagram, PFCP call flow, Sx call flow</h4>
+        <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label><br>
+        <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+    </fieldset>
+</form></div>
+</div>
+
+<a href="https://www.blogger.com/profile/13017198706788427804">
+<div style="display: inline-block; margin-left: 270px; vertical-align: top; border: 1px solid rgb(253, 253, 253); border-radius: 5px; width: 300px; color:black; background-color: white;">
+   
+    <b style="margin-left: 90px;"> About Author</b>
+    <br><br>
+    <img src="IMG_XX.jpg" alt="picture" style="margin-left: 110px;">
+    <h2 style="margin-left: 90px;"><a href="https://www.blogger.com/profile/13017198706788427804"><i>Amit Bajaj</i></a></h2>
+    <span style="margin-left: 5px;">connect to me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+</div></a>
+
+<br><br>
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups2" style="border: 1px solid black; border-radius: 5px; margin: 15px"><legend style="border: 1px solid black;">Thursday, December 2, 2021</legend>
+            <h1>CUPS-Userplane Selection</h1>
+            <p>In CUPS Architecture, Control Plane(SGW-C,PGW-C,SGWPGW-C) selects Userplane (SGW-U,PGW-U,SGWPGW-U) to serve the subscriber request during PDN session establishment</p>
+            <pre style="font-family:'Times New Roman', Times, serif;"> There are multiple ways CP selects UP for a particular request.      
+
+                Based upon APN received in the Create Session request. (APN-level)
+            
+                Based upon the TAC received in Create Session request. (User-location)
+            
+                Based upon the Load information of a particular UP-capacity among multiple UP to be selected.
+            
+                Round-Robin. (Least-loaded)</pre>
+
+            <p>Based upon the operator configuration among above mentioned options, UP selection is to be performed by CP.</p>    
+            <p><u>APN-Level</u>: Same UE can be served by different Userplanes when UP selection is configured based upon APN level configuration.</p>
+            <pre style="font-family: 'Times New Roman', Times, serif;">   Eg:  internet &rarr; UP1
+                
+            IMS &rarr;UP2</pre>
+            <br>
+            <img src="image1.png" alt="diagram1" style="margin-left: 140px;">
+            <br>
+            <p><u>User-location</u>: UE’s can be served by a particular UP based upon their location.</p>
+            <br>
+            <img src="image.png" alt="diagram2" style="margin-left: 180px; height: 246px;">
+
+            <p><u>UP-Capacity</u>: Based upon the Load Control Information (LCI), Overload control information (OCI) received from UP to CP. CP takes the selection decision based upon these values. These values gets updated from UP to CP in SX Response messages.</p>
+            <p><u>Round-Robin</u>: When no specific matched condition is configured for UP selection then by default round-robin technique is used to distribute the load among all the connected UPs.</p>
+            <br>
+            <img src="image3.png" alt="diagram3" style="margin-left: 190px; height: 280px;">
+
+            <h4>Posted by Amit Bajaj at 1:30 AM </h4>
+            <h4>Labels: CUPS, CUPS Architecture, UP function Selection, UP selection, User plane selection in CUPS, UserPlane selection, Userplane selection in LTE CUPS, Userplane selection PFCP, Userplane selection SX</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label><br>
+            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+<br>
+<br>
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups3" style="border: 1px solid black; border-radius: 5px; margin: 5px; margin-left: 17px; margin-right: 17px;"><legend style="border: 1px solid black;">Monday, May 4, 2020</legend>
+            <h1>Network Initiated Dedicated bearer</h1>
+            <p>Before writing about dedicated bearers, we must be aware of the types of bearers in LTE.</p>
+            <p style="line-height: 2px;">There are 2 type of bearers available in LTE, “Default & Dedicated bearer”.</p>
+            <pre style="font-family: 'Times New Roman', Times, serif;"><b>Default Bearer</b> is the primary bearer that is established when UE initially attaches/latches to the 
+network. Also, there could be additional Default bearers that could be required to access PDN for some 
+other services(like IMS-Volte,Internet-Data).</pre>
+            <p style="line-height: 4px;"> <b>Dedicated Bearer</b> is the secondary bearer that is associated with any of the default bearer.</p>
+            <a href="http://www.simpletechpost.com/2012/05/default-bearer-dedicated-bearer-what.html">http://www.simpletechpost.com/2012/05/default-bearer-dedicated-bearer-what.html</a>
+            <br>
+            <br>
+<p>Here are the few questions to answer to better understand the context:</p>
+            <pre style="font-family: 'Times New Roman', Times, serif;">
+Which network element initiate the Network initiated dedicated bearer ?
+<b>Answer:</b> In most of the cases, it is initiated by PCRF (Policy and Charging Rules Function) and in the very few 
+cases PGW where PCRF is not deployed.  </pre>
+
+<pre style="font-family: 'Times New Roman', Times, serif;">How Network initiated dedicated bearer gets triggered ?
+<b>Answer:</b> PCRF initiates the dedicated bearer creation by sending diameter RAR(Re-Auth-Request) to PGW in
+which AVP ‘Charging Rule Install’ is present that specify the QoS parameter(QCI/ARP/GBR etc.) of the
+dedicated bearer to be created. PGW upon receiving RAR, sends Create Bearer Request with the received
+QCI/ARP to SGW. Upon receiving Create Bearer Response from SGW dedicated bearer gets created.</pre>
+
+
+<p>One good example is Volte(Voice over LTE) event.</p>
+
+<p>Refer: <a href="Refer: http://www.lte-5g-secrets.com/2012/05/lte-call-flow-beyond-pgw.html">http://www.lte-5g-secrets.com/2012/05/lte-call-flow-beyond-pgw.html</a></p>
+
+<pre style="font-family: 'Times New Roman', Times, serif;">How PCRF decides to sends RAR with ‘Charging Rule Install’ ?
+<b>Answer:</b> PCRF is configured with Policies in which it is specified that for certain events new bearer 
+creation is to be triggered.</pre>
+
+<p>One good example is Volte(Voice over LTE) event.</p>
+<dl>
+    <dt>Refer Volte Call flow:</dt>
+    <dd><a href="https://www.rfwireless-world.com/Terminology/VoLTE-Originating-Call-Flow-Procedure.html">https://www.rfwireless-world.com/Terminology/VoLTE-Originating-Call-Flow-Procedure.html</a></dd>
+</dl>
+
+
+<pre style="font-family: 'Times New Roman', Times, serif;">During VoLTE call setup procedure, P-CSCF informs PCRF through Rx interface about the Volte call that is
+being setup. PCRF has been configured with Policy (lets say ‘IMS-Volte-Policy’) with the information that
+Dedicated bearer of QCI-1(Voice call) is to be triggered towards PGW. Upon receiving Request from P-CSCF,
+PCRF sends RAR with Charging Rule Install named ‘Voice_Rule’ with QCI-1 along with other necessary
+parameters to PGW fordedicated bearer creation for Voice Call in which Voice data to be sent from 
+source UE to destination UE.</pre>
+
+
+<img src="Diagram_callFlow.PNG" alt="callFlow">
+
+<dl>
+    <dt>For more details:</dt>
+    <dd><a href=" http://www.lte-5g-secrets.com/2012/05/lte-call-flow-beyond-pgw.html"> http://www.lte-5g-secrets.com/2012/05/lte-call-flow-beyond-pgw.html</a></dd>
+</dl>
+            <h4>Posted by Amit Bajaj at  3:50 AM</h4>
+            <pre style="font-family: 'Times New Roman', Times, serif;">Labels: Dedicated bearer, IMS, Network initiated dedicated bearer, Voice Bearer, Voice over LTE
+call flow., Volte</pre>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label><br>
+            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+</form>
+</div>
+<br><br>
+<!-- next element -->
+ <div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+<form>
+    <fieldset id="cups4" style="border: 1px solid black; border-radius: 5px; background-color: white; margin: 5px;"><legend style="border: 1px solid black;">Thursday, March 15, 2018</legend>
+        <h1>APN-OI Replacement</h1>
+<pre style="font-family: 'Times New Roman', Times, serif;">Helps MME select the corresponding PGW based upon the APN-OI replacement value received from HSS 
+in Update Location Answer.</pre>
+<pre style="font-family: 'Times New Roman', Times, serif;">PGW is selected using DNS NAPTR query using APN-FQDN.
+FQDN consists of APN-NI + APN-OI
+</pre>  
+<dl>    
+<dt><u><b>Scenario:</b></u></dt>
+<dd>
+<pre style="font-family: 'Times New Roman', Times, serif;">Traffic can be diverted to the specific PGW when there are multiple PGWs with same MCC-MNC in
+the home network or if the UE is roaming in visiting network and to home-route the traffic to its home PGW.</pre>
+</dd>
+<dd><pre style="font-family: 'Times New Roman', Times, serif;">In the normal scenario, PGW-FQDN constructed by MME based upon the APN value(NI)
+received from UE and MCC/MNC(OI) based upon the IMSI.</pre></dd>
+<dd>FQDN= <APN-NI>.apn.epc.<APN-OI>.3gppnetwork.org</dd>
+<dd>
+<pre style="font-family: 'Times New Roman', Times, serif;">If it is required not to select the default PGW by MME, APN-OI replacement field is
+required and to be provided by HSS to force MME to select the specific PGW of its choice instead of default
+PGW.</pre>
+</dd>
+</dl>
+
+
+<dl>
+<dt><b><u>Case:</u></b></dt>
+<dd>
+    <pre style="font-family: 'Times New Roman', Times, serif;">1. When UE is roaming and traffic needs to divert to home PGW then home HSS needs to
+send Visiting-PLMN allowed flag as false and APN-OI replacement value as home MCC-MNC
+(mncxxx.mccxxx.gprs) along with OI tag if need to route to the specific PGW host.
+
+<em style="color: red;">tag.mnc&#60;MNC&#62;.mcc&#60;MCC&#62;.gprs
+    Pgw1.mncxxx.mccxxx.gprs</em>
+</pre>
+
+<pre style="font-family: 'Times New Roman', Times, serif;">Then MME creates APN-FQDN using above information and sends DNS NAPTR query to get the home
+PGW IP to forward the Create Session Request. 
+</pre>
+</dd>
+</dl>
+
+<pre style="font-family: 'Times New Roman', Times, serif;"><b><u>Note</u>:</b>  if APN-OI replacement value is set by HSS in UE’s subscription Profile, then this is applicable for
+all the APN’s UE is subscribed to.</pre>
+
+
+        <h4>Posted by Amit Bajaj at   5:37 AM </h4>
+        <pre style="font-family: 'Times New Roman', Times, serif;">Labels: apn fqdn, apn oi replacement field, APN-OI, APN-OI Replacement, home-route, local breakout, 
+lte apn oi replacement, LTE Secrets, roaming</pre>
+        <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+    </fieldset>
+</form>
+</div>
+<br><br>
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups5" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Tuesday, November 14, 2017</legend>
+            <h1>LTE End To End Call flow</h1>
+            <h4>Posted by Amit Bajaj at  2:53 AM </h4>
+            <h4>Labels: LTE End to End Call Flow, LTE Secrets, LTE-Attach End to End, LTE-Attach End to End Call flow</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+<br><br>
+    <!-- last second element -->
+     <div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+        <form>
+            <fieldset id="cups6" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Friday, August 18, 2017</legend>
+                <h2>ARP ( Allocation and Retention Priority) in LTE</h2>
+                <h4>Posted by Amit Bajaj at  11:06 PM</h4>
+                <pre style="font-family:'Times New Roman', Times, serif;"> <b>ARP parameter</b> in Qos profile define the the relative importance of a bearer(requested) compared to other
+    existing bearers for the allocation or retention in the network.
+    
+            ARP consists of three parameters :
+                    
+            <b>Priority level(1-15):</b> Defines the importance of a bearer in relation to other bearers.
+            <b>Pre-emption Capability:</b> Defines the capability of the requested bearer to Pre-empt (remove)
+            the existing bearers having low priority in the network.
+            i.e Capability to delete the other bearers.
+            <b>Pre-emption Vulnerability:</b> Defines the capability of a bearer to get Pre-emt or deleted 
+            by other high priority bearers.
+            I.e Capability to get deleted by other bearers.
+            </pre>
+
+            <dl>
+                <dt><u><b>Use Case:</b></u></dt>
+                <br>
+                <dd> Suppose a Network is configured with a threshold to support 1000 number of bearers and a request received for the creation
+ of one more bearer when there are already 1000 bearers exist in the network.Then network decides whether to accept the new bearer creation request
+ or not based upon the ARP value of the requested bearer ie. Priority Level is high and Pre-emption Capability is ENABLED. Based upon that network 
+ initiate existing bearer deletion(one or more) that are having low Priority Level and Pre-emption Vulnerability ENABLED to give services to the
+ requested high Priority bearer.</dd>
+            </dl>
+<p><b><u>Note</u>:</b>This is product specific implementation to select the algorithm to select and delete the existing bearers based upon priority.  </p>
+
+                <h4>Posted by Amit Bajaj at 11:06 PM </h4>
+
+                <h4>Labels: CUPS Architecture, CUPS call flow, CUPS call flow diagram, PFCP call flow, Sx call flow</h4>
+               
+                <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+                <br>           <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+            </fieldset>
+        </form>
+    
+     </div>
+</div>
+<br><br>
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups7" style="margin: 5px; border: 1px solid black; border-radius: 5px;">
+            <legend style="border: 1px solid black;">Friday, August 18, 2017</legend>
+            <h1>MME IN POOL</h1>
+            <p>MME in pool is a collection of MME's that serves the common service area consisting of one or more Tracking Areas.</p>
+            <p>All the eNodeBs that are serving the Tracking Areas are connected to all the MME's in Pool via S1 interface.</p>
+            <p>Upon receiving Attach request from UE, enodeB forwards the Attach request to the one of the MME in Pool based upon the RelativeMmeCapacity parameter(proportion) provided by the MME in S1Setup procedure</p>
+            <p> For example: MME1 is configured with RelativeMmeCapacity 50 and MME2 has RelativeMmeCapacity 100. enodeB1 and enodeB2 are connected  to both the MMEs via S1 interface in Mesh topology.
+                In that case, enodeB forwards number of Attach request to the MMEs in ratio 1:2 (50:100). 
+                Out of total 30 Attach Requests, 10 will be sent to MME1 and 20 will be sent to MME2.</p>
+            <p>MME in Pool shares the load of the subscribers in that service area</p>
+            <img src="MMEPool.png" alt="picture" style="margin-left: 200px;"><br>
+            <p>Subscribers latched in TrackingArea1 and Tracking Area2 served by enodeB1 will be distributed among both the MMEs in pool (MME1 & MME2) based upon the RelativeMmeCapacity of each MME in pool.</p>
+            <p> Once the UE is attached successfully to any of the MME it is assigned a unique identity known as GUTI.
+                GUTI = GUMMEI  +  M-TMSI</p>
+            <p>GUMMEI  contains  Mobile Country Code (MCC), Mobile Network Code (MNC), MmeGroupId, and the MmeCode that identifies MME in an MME Pool.</p>
+            <p>M-TMSI: Unique identity assigned to a UE.</p>
+            <p>If the subscriber moves between the TA’s let say TA2 àTA3 in the same service area it remains connected to the same MME instead of the TrackingArea served by different enodeB (enodeB2).</p>
+            <p>MME identity will be identified by the enodeB with the help of GUMMEI as every enodeB has the S1 link establish with all the MMEs in pool.  </p>
+            <p>All the MMEs in a pool share the load from all the UE in the pool service area. As long as the UE remains in the pool service area, it is normally attached to the same MME. 
+                In case any of the MME became out of service, the eNodeB reroutes the signaling from the UE to another MME in the MME pool.</p>
+            <br>
+<h2>Benefits:</h2>
+            <ol>
+                <li>Network failure Handling.</li>
+                <li>Network Load balancing.</li>
+                <li>Reduce the Inter-MME Tracking Area Updates.</li>
+                <li>Easy to take out MME from the pool for maintenance purpose.</li>
+            </ol>
+
+            <p>By setting RelativeMmeCapacity to 0 in MME. After that no traffic will be sent by any of the connected enodeBs to this MME.</p>
+        
+            <h4>Posted by Amit Bajaj at 7:56 PM </h4>
+            <h4>Labels: Load balance in MME, Load Sharing MME, MME Pool, MME pool in LTE., MME pooling, RelativeMmeCapacity, SGSN MME in Pool</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>           <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+
+
+<!-- elements of next page -->
+<br><br>
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups5" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Saturday, February 16, 2013</legend>
+            <h1>Subscriber Tracing in lte network</h1>
+            <p> Subscriber Tracing provides detailed information at the call level for the UE(user).
+            </p>
+            <p>This is done in the lte network elements(MME,SGW,PGW) to measure the performance of network elements as well as the quality of services given to the user while using lte network.</p>
+            <p>Subscriber is also traced on demand of the user itself if it is not getting the good or appropriate quality of services from the lte network.</p>
+            Operator can also trace some of the random users to check the quality of network.
+            
+            <pre style="font-family: 'Times New Roman', Times, serif;">Purpose of Subscriber Tracing in lte network:
+
+                -     Optimize the lte network performance.
+                
+                -     Upon user demand if it is not getting the good quality of services from the network.</pre>
+            <P>Operator applies the tracing on lte network elements for the specific users based on any one of the information provided by user i.e. IMSI or IMEI or MSISDN.</P>
+            <details><summary>How Subscriber Tracing Works:</summary>Two types of Subscriber Tracing can be done in network. <ol><li>Management based.</li>
+            <li>Signaling based.</li></ol>
+        
+            <p><u>In management based</u> tracing operator configure User id type (imsi(0) or imei(1) or msisdn(2)) and User id value (imsi value) on the lte node(pgw,sgw,mme) from which operator wants the traces for user.</p>
+            <p>Example: UE type – IMSI, UE value – 1234566778899, Node – PGW.</p>
+            <p>Now when the UE tries to attach with the lte network all the traces sent to TCE(external entity) by PGW.</p>
+            <p>Traces contains all the details related to the user like apn, plmn, imsi, rat type, qos parameters, user location etc.</p>
+            <p><u>In Signalling based</u> tracing operator modify the configuration data in HSS with subscriber tracing enabled for the particular UE. Whenever UE attaches with the network, HSS sends Subscriber tracing enabled in the Subscription data in message Update Location answer and then MME forwards subscriber tracing parameter in Create Session request to SGW and then to PGW. Upon receving this parameter all the nodes starts tracing of that user and send all the trace records to TCE (Trace Collection entity).</p>
+        
+            <h3>Configuration for Signaling based Subscriber Tracing.</h3>
+            <p>In HSS - </p>
+            <ol>
+                <li>Trace depth – Low, medium, high. (At what detailed level traces required).</li>
+                <br>
+                <li>Nodes – SGW, MME, PGW. (On which of the node tracing is required).</li>
+                <br>
+                <li>Interfaces – S5,S8,S11,Gx,Gn etc. (On which interface tracing is required).</li>
+                <br>
+                <li>TCE Address – Ip address of TCE.  (Which ip address node should send traces).</li>
+                <br>
+            </ol>
+            <h3>Configuration for Management based Subscriber Tracing.</h3>
+            <p>In SGW,PGW,MME -</p>
+            <ol>
+                <li>Trace Depth – Low, medium, high.</li>
+                <br>
+                <li>Type of Traces – XML , Syslog.</li>
+                <br>
+                <li>TCE Address – Ip address of TCE</li>
+                <br>
+            </ol>
+
+<p>Note: In operator based tracing two types of tracing is possible XML, Syslog.</p>
+<p>but in Signaling based only xml tracing is possible.</p>
+
+
+            </details>
+            <h4>Posted by Amit Bajaj at 4:55 AM </h4>
+            <h4>Labels:  Equipment Tracing, ST in lte, Subscriber equipment trace, subscriber trace, subscriber tracing in lte, subscriber tracing in lte network</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+<br><br>
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups5" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Saturday, January 19, 2013</legend>
+            <h1>LTE call flow beyond PGW</h1>
+            <p>Here are the call flow from PGW to PCRF on Gx interface.</p>
+            <p>During Initial Attach procedure, PGW check for the APN/Charging Characterstics received in Create session request for whether dynamic Policy(configured in PCRF) or Static policy(configured on PGW) should be applied. Depending upon the configuration, PGW forwards the request to PCRF for providing PCC Rule for the UE attach request.</p>
+            <img src="image4.png" alt="some data i don't know im just a frontend guy" style="margin-left: 200px;">
+            <p style="color: red; font-size: larger;">PCC rules consist of:</p>
+            <ul style="color: red;">
+                <li>Rule name - This is to be used to reference a PCC rule in communication between PCEF and the PCRF . </li><br>
+                <li>Service data flow filters - shall be used to select the type of traffic that passes through the bearer on which the rule applies.</li><br>
+                <li>precedence : Determines the precedence of the bearer on which the rule is applied when data is received uplink or downlink for a particular type UDP/TCP etc. </li><br>
+                <li>QoS parameters - Includes QoS Class Identifier (QCI), also the Allocation and Retention Priority (ARP) and GBR,MBR for uplink and downlik.</li><br>
+                <li>Charging type - Defines whether online,offline or both or none charging is applied.</li><br>
+            </ul>
+    <pre style="font-family: 'Times New Roman', Times, serif;">
+  PGW sends CCR(Init) to PCRF to get the PCC Rule from PCRF.
+  PCRF has primarily two entities. PDT (Policy Derivation table) and PCT (Policy and
+  Configuration table).
+  In PCT, PCRF has number of PCC Rules configured.
+  In PDT, PCRF has the selection criteria based upon which PCRF sends the selected PCC Rules in 
+  CCA.</pre>
+  <div>
+    <h3>Selection criteria- Can be IMSI,APN name, QCI, MBR/GBR etc. means if CCR request contains </h3>
+    <pre style="font-family: 'Times New Roman', Times, serif;"> the given value of IMSI or QCI and so then particular PDT is applied. 
+ For Example: In CCR (Init), PCRF receive IMSI 122334455667001. Based upon this IMSI, PCRF
+ has PDT configured in which PCRF applies two PCC Rules let suppose PCC1 and PCC2.</pre></div>
+            <pre style="font-family: 'Times New Roman', Times, serif;">
+  Upon getting successfull PDT matched PCRF sends successfull CCA (Init) to PGW.
+  Now, upon getting of successfull CCA (Init) PGW sends CCR (Update) to confirm the PCRF that  
+  the Rule is applied  successfully on the particular bearer (in this case default bearer) and also
+  inform the ip address of the UE.Then PCRF acknowlege with CCA(Update) success.
+
+  Now PGW has already applied the Rule(Qos,filters,MBR,GBR etc) received from PCRF to
+  the requested bearer, it sends Create Session Response to SGW and then the Default session created
+  successfully.
+ 
+  Similar Procedure follows for dedicated bearer also.
+  In dedicated bearer creation/updation/deletion, PGW sends CCR Update to PCRF.PCRF 
+  acknowledge the request with CCA Update.
+            </pre>
+
+<p>Note: CCR (Init) send by PGW only once for a UE session i.e on default bearer creation. </p>
+
+            <h4>Posted by Amit Bajaj at  3:37 AM </h4>
+            <h4>Labels: call flow for pcrf in lte, Gx interface lte, Gx pcrf, lte pcrf call flow</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+<br><br>
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups5" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Tuesday, November 14, 2017</legend>
+            <h1>Closed Subscriber Group in lte (CSG)</h1>
+            <p>Closed Subscriber Group identifies a group of subscribers who are permitted to access one or more CSG cells of the PLMN.</p>
+            <br>
+            <p>To make a CSG call UE should send CSG Id to which it belongs and its access type in Attach request.</p><br>
+            <pre style="font-family: 'Times New Roman', Times, serif;">
+MME then performs UE authentication with the HSS and then exchanges Update Location Request and Answer.
+In Update Location Answer HSS sends CSG Information(CSG Id, Subscription timer) in Subscription data.
+
+MME then verifies the CSG Id with the CSG received in Attach request if it matches then UE proceed the CSG call
+and sends Create session request with CSG Information IE to SGW. Upon receiving of successful response from SGW,
+MME sends Attach Accept message with Member status as ‘member’. After expiry of the Subscription timer for which
+UE is subscribed to attach with CSG cell, MME initiate PDN connection deletion.
+
+ 
+
+What if CSG Id receive in Attach Request is not same as received in Subscription Data from HSS?
+
+MME still make a successful call but for the specific time(300 sec) and send Attach Accept message to UE with Member status as <b>‘non-member’</b>.
+After expiry of non-member timer MME initiates PDN Connection deletion.
+            </pre>
+
+            <h4>Posted by Amit Bajaj at  2:52 AM </h4>
+            <h4>Labels: Closed subscriber Group lte, CSG, CSG Id, csg list, CSG lte</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+
+<br><br>
+
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;" id="emcall">
+    <form>
+        <fieldset id="cups5" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Friday, January 18, 2013</legend>
+            <h1>lte Emergency Call Secrets</h1>
+            <pre style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+          Dial Emergency numbers like 112,999,111 etc.
+          Known Emergency numbers are already stored in the USIM/UE.
+       
+          MME can also provide the Emergency number List in Attach accept or TAU accept.
+       
+          If Emergency number list is provided by the MME, it is stored in the USIM and when the user initiate a call
+          to one of the number provided in the list then UE treat it as a Emergency number and initiate Attach
+          procedure with Type Emergency_attach.
+            </pre>
+
+            <ol>
+                <li>Default Emergency APN should be configured in MME in case where UE does not send APN in attach request and also HSS does not provide it in Subscription data for Emergency attached UE or Authentication is optional. In that case MME provides its default APN and Qos and procced the emergency call.</li>
+                <br>
+                <li>MME rejects the emergency call when APN received from UE is not configured in MME      Emergency APN list.</li>
+                <br>
+                <li>MME rejects the emergency call only when HSS sends Authentication failure with cause ‘IMSI unknown’ in case of MME is configured to contact the HSS. For all other authentication failure cause MME proceed with the call successfully.</li>
+                <br>
+                <li>When a UE attached normally(non-emergency) with the Lte network it can also calls for emergency services by sending PDN connectivity request with request type emergency.</li>
+                <br>
+                <li>UE can not create two emergency default bearers. It can be one default and other is dedicated.</li>
+                <br>
+                <li>UE can create any no. of dedicated bearer with emergency default bearer but the ARP(Qos) value should be same for all the bearers and the IMSI authentication is mandatory.</li>
+                <br>
+                <li>Bearer modification is not possible for emergency bearers.</li>
+                <br>
+                <li>If any one of the attach type or the request type in Attach Request is non-emergency then call is considered as normal call(non-emergency call).</li>
+                <br>
+                <li>Once the call is completed UE need not to detach. As soon as UE goes into idle mode, MME automatically release the call.</li>
+                <br>
+            </ol> 
+<label>To know about MME configuration for Emegency Click</label><a href="#dataecfd">MME EmergencyConfiguration Data</a>
+
+
+            <h4>Posted by Amit Bajaj at  2:53 AM </h4>
+            <h4>Labels: LTE End to End Call Flow, LTE Secrets, LTE-Attach End to End, LTE-Attach End to End Call flow</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+
+<br><br>
+
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;" id="dataecfd">
+    <form>
+        <fieldset id="cups5" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Friday, January 18, 2013</legend>
+            <h1>IMS Emergency Call in LTE Network</h1>
+            <h2><b>Emergency service</b> is provided to the Lte enabled UE in the following situations:</h2>
+            <ol>
+                <li>User calls an <b>emergency number.</b></li>
+                <li>UE is in the state where network is not available to serve the UE.</li>
+                <li>User can make IMS emergency call even if does not have a SIM card.</li>
+                <li>UE is in limited service state i.e limited service state where UE is not allowed to call or roam.</li>
+                <pre style="font-family: 'Times New Roman', Times, serif;">
+-         To make an IMS Emergency call, UE sends Attach type as Emergency attach and request type as Emergency in Attach Request.
+-         MME(Lte Network) should be configured with the Emergency support enabled otherwise MME rejects the emergency call.
+-         Following are the various configurations in MME according to which MME proceeds the Emergency call.
+                </pre>
+            </ol>
+
+<div>
+    <h2 style="color:  red;">Emergency Type </h2>
+    <ul>
+        <li><b>IMSI Authentication mandatory:</b> Emergency call is successful only when
+            IMSI comes in Attach Request and Authentication from HSS
+            should be successfully done for this IMSI.</li>
+        <li><b>IMSI Mandatory Authentication optional:</b>  Emergency call is successful
+            only when IMSI comes in Attach Request and Authentication from HSS
+            needs not to be successfully done.In case authentication fails, network keeps
+            tracking of that IMSI's that are unauthenticated</li>
+        <li><b>IMSI Optional IMEI mandatory:</b> In this case UE is identified in the network
+            by its IMEI only.UE may or may not send IMSI in Attach Request. If UE sends IMSI
+            it is not neccassary be authenticated. </li>
+    </ul>
+    <h2 style="color:  red;">Emergency APN </h2>
+    <ol>That is needed to identify the PGW for emergency call.</ol>
+    <h2 style="color:  red;">Emergency QoS </h2>
+    <ol>That is required by the MME only when the UE authentication is optional.
+        Otherwise HSS sends it in Subscription Data.</ol>
+</div>
+
+<br>
+<label for="">For Emergency call secrets Click on </label><a href="#emcall">Emergency Secrets</a>
+
+
+            <h4>Posted by Amit Bajaj at  7:56 AM </h4>
+            <h4>Labels: emergency attach, emergency call in lte network, emergency network, emergency over lte, emergency qos, emergencylte, ims emegency</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+
+<br><br>
+
+<div style="background-color: white; padding-top: 5px; padding-bottom: 5px;">
+    <form>
+        <fieldset id="cups5" style="border: 1px solid black; border-radius: 5px; margin: 5px;"><legend style="border: 1px solid black;">Monday, June 25, 2012</legend>
+            <h1>Tear Down indication in Gtpv1 (Teardown Ind)</h1>
+            <p>As you have seen a parameter named teardown Ind in Delete PDPContext GTP message from SGSN to GGSN. This parameter has a great significance in Deleting already existed PDP Contexts.</p>
+<h4>Teardown Indication IE has only two possible values 0 and 1.
+</h4>
+<p>For deleting existing PDP Context , there are 4 different scenarios where tear down indicator IE plays its role :</p>
+<ol>
+    <li> If 1, then all the PDP Context that share same PDP address ( UE is allocated an IP/PDP address, say 70.70.70.1 for primary PDP context  and secondary PDP context linked with this primary PDP context has same IP/PDP address) is deleted.
+        Example:  If secondary PDP context is deleted with tear down set to 1 then with secondary PDP context as well as primary PDP context  gets deleted and vice versa.</li>
+    <br>
+    <li>If 0, then only PDP context identified by NSAPI (bearer-ID) in Delete PDP Context gets deleted not all PDP context linked with the same UE/PDP address.
+        Note: If primary context is deleted with tear down indication to zero then primary PDP context  gets deleted and secondary context linked if any, with this primary PDP context  gets the primary PDP context role.</li>
+    <br>
+    <li>If not mentioned any value for tear down indication then PDP context identified by NSAPI (bearer-ID) in Delete PDP Context gets deleted not all PDP context linked with the same UE/PDP address.</li>
+    <br>
+    <li>If 0 or no value, and only primary PDP Context is activated/available, then GGSN ignore the Delete PDP Context message and discard</li>
+    <br>
+</ol>
+
+
+
+
+            <h4>Posted by Amit Bajaj at  12:11 AM </h4>
+            <h4>Labels: Deletepdp context gtpv1, GTPv1 teardown Ind, tear down Indication lte, teardown in Gtpv1, TearDown Ind, Teardown Ind Delete PDP Context</h4>
+            <label for="_comment">Connect to me: <a href="mailto:mail.amitbajaj@gmail.com">Amit Bajaj</a></label>
+            <br>            <span>Follow Me: </span><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&followup=https%3A%2F%2Fwww.blogger.com%2Ffollow.g%3Fview%3DFOLLOW%26blogID%3D3801818804630561063&ifkv=AdF4I77nciK-Hvv_UL86oKVwJw38su9xUSEFqYXaFqvWGGc_WaqHIGGMNiOlhUPsl_uy0mXsZZHY0Q&passive=1209600&service=blogger&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S906565499%3A1721129490927162&ddm=0">on my bloggs</a>
+
+        </fieldset>
+    </form>
+</div>
+
+<br><br><br><br><br><br><br><br>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href = '#'>about me</a></li>
+                    <li><a href = '#'>call us</a></li>
+                    <li><a href = '#'>privacy policy</a></li>
+                    <li><a href = '#'>affiliate program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href = '#'>Follow Me</a></li>
+                    <li><a href = '#'>Mail us</a></li>
+                    <li><a href = '#'>Feeback</a></li>
+                    <li><a href = '#'>payment options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class='social-icons'>
+                    <a href = '#'><i class="ph ph-instagram-logo" style="font-size: 20px"></i></a>
+                    <a href = '#'><i class="ph ph-pinterest-logo" style="font-size: 20px"></i></a>
+                    <a href = '#'><i class="ph ph-linkedin-logo" style="font-size: 20px"></i></a>
+                    <a href = '#'><i class="ph ph-youtube-logo" style="font-size: 20px"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
